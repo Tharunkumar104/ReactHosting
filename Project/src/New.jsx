@@ -6,7 +6,7 @@ function Home(parameter) {
             <h1>{parameter.name} home</h1>
             <button onClick={() => {
                 setCount(count + 1);
-            }}>Click</button>
+            }}>Count   {count}</button>
             <p>{count}</p>
         </div >
     )
