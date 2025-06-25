@@ -1,0 +1,746 @@
+use KEC
+switched to db KEC
+db.createCollection("Tharunkumar")
+{ ok: 1 }
+db.Tharunkumar.insertOne({
+name="Tharunkumer", 
+age="19",
+email="tharunkumar10406@gmail.com" ,
+department="EIE",})
+SyntaxError: Invalid shorthand property initializer. (2:4)
+
+[0m [90m 1 |[39m db[33m.[39m[33mTharunkumar[39m[33m.[39minsertOne({
+[31m[1m>[22m[39m[90m 2 |[39m name[33m=[39m[32m"Tharunkumer"[39m[33m,[39m 
+ [90m   |[39m     [31m[1m^[22m[39m
+ [90m 3 |[39m age[33m=[39m[32m"19"[39m[33m,[39m
+ [90m 4 |[39m email[33m=[39m[32m"tharunkumar10406@gmail.com"[39m [33m,[39m
+ [90m 5 |[39m department[33m=[39m[32m"EIE"[39m[33m,[39m})[0m
+db.Tharunkumar.insertOne({
+name:"Tharunkumar",
+age:"19",
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a26d1235b230cbc8f2686')
+}
+db.Tharunkumar({
+email:"tharunkumar10406@gmail.com",
+dep:"EIE"})
+TypeError: db.Tharunkumar is not a function
+db.Tharunkumar.insertOne({})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a2736235b230cbc8f2687')
+}
+db.Tharunkumar.insertOne({
+email:"tharunkumar10406@gmail.com",
+dep:"EIE"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a2769235b230cbc8f2688')
+}
+db.Tharunkumar.insertMany([
+  {name:"Thomas",age:"19",email:"thomas@gmail.com",dep:"ECE"},
+  {name:"Ram",age:"57",email:"ram@gmail.com",dep:"CSE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2b69235b230cbc8f2689'),
+    '1': ObjectId('685a2b69235b230cbc8f268a')
+  }
+}
+db.Tharunkumar.insertMany([
+  {name:"Durai",age:"54",email:"durai@gmail.com",dep:"EEE",gender:"Male"},
+  {name:"Amutha",age:"42",email:"amutha@gmail.com",dep:"AIML",gender:"Female"},
+  {name:"Ragavi",age:"23",email:"ragavi@gmail.com",dep:"EEE",gender:"Female"},
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2ce5235b230cbc8f268b'),
+    '1': ObjectId('685a2ce5235b230cbc8f268c'),
+    '2': ObjectId('685a2ce5235b230cbc8f268d')
+  }
+}
+db.Tharunkumar.insertMany([
+  {name:"Dharanisri",age:"60",email:"dharanisri@gmail.com",gender:"Female"},
+  {name:"Sutharshan",age:"46",email:"sutharshan@gmail,com",gender:"Unknown"}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2dbe235b230cbc8f268e'),
+    '1': ObjectId('685a2dbe235b230cbc8f268f')
+  }
+}
+db.CollectionFind()
+TypeError: db.CollectionFind is not a function
+db.Tharunkumar.find()
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: '19'
+}
+{
+  _id: ObjectId('685a2736235b230cbc8f2687')
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'tharunkumar10406@gmail.com',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '46',
+  email: 'sutharshan@gmail,com',
+  gender: 'Unknown'
+}
+db.Tharunkumar.find(name:"Dharanisri")
+SyntaxError: Unexpected token, expected "," (1:24)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mTharunkumar[39m[33m.[39mfind(name[33m:[39m[32m"Dharanisri"[39m)
+ [90m   |[39m                         [31m[1m^[22m[39m[0m
+db.Tharunkumar.find(name:'Dharanisri')
+SyntaxError: Unexpected token, expected "," (1:24)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mTharunkumar[39m[33m.[39mfind(name[33m:[39m[32m'Dharanisri'[39m)
+ [90m   |[39m                         [31m[1m^[22m[39m[0m
+db.Tharunkumar.find({name:"Dharanisri"})
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female'
+}
+db.Tharunkumar.findOne()
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: '19'
+}
+db.Tharunkumar.updateOne({name:'Tharunkumar',{$set:{age:18}}})
+SyntaxError: Unexpected token (1:45)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mTharunkumar[39m[33m.[39mupdateOne({name[33m:[39m[32m'Tharunkumar'[39m[33m,[39m{$set[33m:[39m{age[33m:[39m[35m18[39m}}})
+ [90m   |[39m                                              [31m[1m^[22m[39m[0m
+db.Tharunkumar.updateOne({name:'Tharunkumar'},{$set:{age:18}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Tharunkumar.findOne()
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18
+}
+db.Tharunkumar.updateOne({name:"Sutharshan"},{$set:{gender:Trans}})
+ReferenceError: Trans is not defined
+db.Tharunkumar.updateOne({name:"Sutharshan"},{$set:{gender:'Trans'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Tharunkumar.findOne()
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18
+}
+db.Tharunkumar.find({name:'Sutharshan'})
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '46',
+  email: 'sutharshan@gmail,com',
+  gender: 'Trans'
+}
+db.Tharunkumar.updateOne({name:'Sutharshan'},{$set:{gender:'Gay'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Tharunkumar.find({name:'Sutharshan'})
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '46',
+  email: 'sutharshan@gmail,com',
+  gender: 'Gay'
+}
+db.Tharunkumar.updateOne({name:'Sutharshan'},{$set:{gender:'Female'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Tharunkumar.find({name:'Sutharshan'})
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '46',
+  email: 'sutharshan@gmail,com',
+  gender: 'Female'
+}
+db.Tharunkumar.updateMany({},{$set:{phone:"9047323169"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+db.Tharunkumar.find()
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18,
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2736235b230cbc8f2687'),
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'tharunkumar10406@gmail.com',
+  dep: 'EIE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '46',
+  email: 'sutharshan@gmail,com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+db.Tharunkumar.updateOne({name:"Sutharshan"},{$set{age:19,email:'sutharshank.23eie@kongu.edu',phone:'7339012371'}})
+SyntaxError: Unexpected token, expected "," (1:50)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mTharunkumar[39m[33m.[39mupdateOne({name[33m:[39m[32m"Sutharshan"[39m}[33m,[39m{$set{age[33m:[39m[35m19[39m[33m,[39memail[33m:[39m[32m'sutharshank.23eie@kongu.edu'[39m[33m,[39mphone[33m:[39m[32m'7339012371'[39m}})
+ [90m   |[39m                                                   [31m[1m^[22m[39m[0m
+db.Tharunkumar.updateOne({name:"Sutharshan"},{$set{age:'19',email:'sutharshank.23eie@kongu.edu',phone:'7339012371'}})
+SyntaxError: Unexpected token, expected "," (1:50)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mTharunkumar[39m[33m.[39mupdateOne({name[33m:[39m[32m"Sutharshan"[39m}[33m,[39m{$set{age[33m:[39m[32m'19'[39m[33m,[39memail[33m:[39m[32m'sutharshank.23eie@kongu.edu'[39m[33m,[39mphone[33m:[39m[32m'7339012371'[39m}})
+ [90m   |[39m                                                   [31m[1m^[22m[39m[0m
+db.Tharunkumar.updateOne({name:"Sutharshan"},{$set:{age:'19',email:'sutharshank.23eie@kongu.edu',phone:'7339012371'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Tharunkumar.find().sort({name:1})
+{
+  _id: ObjectId('685a2736235b230cbc8f2687'),
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'tharunkumar10406@gmail.com',
+  dep: 'EIE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '19',
+  email: 'sutharshank.23eie@kongu.edu',
+  gender: 'Female',
+  phone: '7339012371'
+}
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18,
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE',
+  phone: '9047323169'
+}
+db.Tharunkumar.updateOne({dep:"EIE"},{$set:{name:"Tharunkumar"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Tharunkumar.find().sort({name:1})
+{
+  _id: ObjectId('685a2736235b230cbc8f2687'),
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '19',
+  email: 'sutharshank.23eie@kongu.edu',
+  gender: 'Female',
+  phone: '7339012371'
+}
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18,
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'tharunkumar10406@gmail.com',
+  dep: 'EIE',
+  phone: '9047323169',
+  name: 'Tharunkumar'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE',
+  phone: '9047323169'
+}
+db.Tharunkumar.updateOne({email:"tharunkumarkumar10406@gmail.com"},{$set:{name:"Tharunkumar"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.Tharunkumar.find()
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18,
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2736235b230cbc8f2687'),
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'tharunkumar10406@gmail.com',
+  dep: 'EIE',
+  phone: '9047323169',
+  name: 'Tharunkumar'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '19',
+  email: 'sutharshank.23eie@kongu.edu',
+  gender: 'Female',
+  phone: '7339012371'
+}
+db.Tharunkumar.find().sort({age:1})
+{
+  _id: ObjectId('685a2736235b230cbc8f2687'),
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'tharunkumar10406@gmail.com',
+  dep: 'EIE',
+  phone: '9047323169',
+  name: 'Tharunkumar'
+}
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18,
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '19',
+  email: 'sutharshank.23eie@kongu.edu',
+  gender: 'Female',
+  phone: '7339012371'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+db.Tharunkumar.find().sort({name:1})
+{
+  _id: ObjectId('685a2736235b230cbc8f2687'),
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '19',
+  email: 'sutharshank.23eie@kongu.edu',
+  gender: 'Female',
+  phone: '7339012371'
+}
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Tharunkumar',
+  age: 18,
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'tharunkumar10406@gmail.com',
+  dep: 'EIE',
+  phone: '9047323169',
+  name: 'Tharunkumar'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE',
+  phone: '9047323169'
+}
+KEC
+
